@@ -1,0 +1,821 @@
+/*GENERAL SETTINGS*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+* {     
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+button {
+  border: none;
+  outline: none;   
+  cursor: pointer;
+  background: none;
+}
+
+a, a:link, a:hover, a:visited, a:active {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+  padding: 0;  
+  z-index: 10; 
+  font-weight: 700; 
+}
+
+p {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 2.8rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.8rem;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+body {
+  display: grid;
+  grid-template: 
+  "home" 100vh
+  "about"
+  "about"
+  "projects" 
+  "contact" 
+  "footer" 
+  /1fr;
+  font-family: 'Montserrat', sans-serif;
+}
+
+section {    
+  padding: 2rem;
+}
+
+/*TOP SECTION*/
+
+.home {
+  color: white;
+  grid-area: home;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home h4 {
+  border-top: .2rem solid white;
+  padding-top: 1rem;
+  margin: 3rem 0 10rem 0;  
+  align-self: center;         
+}
+
+.home .hover-btn {
+  justify-self: center;   
+}
+
+.title-color {    
+  background: -webkit-linear-gradient(135deg, #1480b3 0%, #54d7ee  100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+
+.hover-btn {
+  display: inline-block;
+  position: relative;
+  padding: .8rem 1.6rem;
+  font-size: 2.1rem;
+  font-weight: 700;
+  line-height: 1;
+  z-index: 2;
+  transition: all .6s cubic-bezier(.19,1,.22,1);
+  border-image: linear-gradient(135deg, #1480b3 0%, #54d7ee  100%);
+  background: linear-gradient(135deg, #1480b3 0%, #54d7ee 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 2px solid transparent;
+  border-image: linear-gradient(135deg, #1480b3 0%, #54d7ee  100%);
+  border-image-slice: 1;
+}
+
+@keyframes move-twink-back {    
+  from {background-position:0 0;}    
+  to {background-position:-10000px 5000px;}    
+ }
+    
+@-webkit-keyframes move-twink-back {    
+  from {background-position:0 0;}    
+  to {background-position:-10000px 5000px;}    
+}
+    
+@-moz-keyframes move-twink-back {    
+  from {background-position:0 0;}    
+  to {background-position:-10000px 5000px;}    
+}
+    
+@-ms-keyframes move-twink-back {    
+  from {background-position:0 0;}    
+  to {background-position:-10000px 5000px;}    
+}
+
+.stars, .twinkling {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+}
+.stars {
+  z-index: 0;
+  background: #000 url(images/stars.png) repeat top center; 
+    
+}
+
+.twinkling {
+  z-index: 1;
+  animation: move-twink-back 200s linear infinite;
+  -o-animation: move-twink-back 200s linear infinite;
+  -ms-animation: move-twink-back 200s linear infinite;
+  -moz-animation: move-twink-back 200s linear infinite;  
+  -webkit-animation: move-twink-back 200s linear infinite;
+  background: transparent url(images/twinkling.png) repeat top center;
+} 
+
+/*ABOUT SECTION*/
+
+.about {
+  grid-area: about;
+  background: black;
+  padding: 0;
+}
+
+.about-background {
+  display: grid;
+  grid-template: 
+  "h2"
+  "img"
+  "p"
+  "btn"
+  "sc"
+  "eei"
+  /1fr;
+  justify-items: center;
+  background-color: #5ab6e0;
+  background-image: linear-gradient(135deg,#5ab6e0,rgba(40, 121, 146, 0.877), #add6e2);
+  color: #fff;  
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+  position: relative;
+  padding: 4rem 2rem 15rem 2rem;
+}
+
+.about-background:after {
+  -webkit-clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+  background: white;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 94.75%;
+  right: 0;
+  height: 100%;
+  display: block;
+}
+
+.about h2 {
+  grid-area: h2;
+  margin: 0 0 7rem;
+}
+
+.about h3 {
+  align-self: flex-start;
+  margin: 4rem 0;
+  padding-bottom: 1rem;
+  border-bottom: .25rem solid white;
+}
+
+.profile-img {
+  grid-area: img;
+  height: auto;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 3rem rgba(0,0,0,0.5);
+}
+
+.about-text {
+  grid-area: p;
+  display: flex;
+  flex-direction: column;
+  margin: 4rem 0 ;
+}
+
+.about-text a {
+  color: white;
+}
+
+.hover-btn-contact {
+  grid-area: btn;
+  padding: .8rem 1.6rem;
+  color: white; 
+  position: relative;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 5rem 0 0;
+  border: 0.2rem solid white; 
+  align-self: center;
+}
+
+.skills-container {
+  grid-area: sc;
+  display: flex;
+  flex-direction: column;    
+  width: 100%;
+}
+
+.skill-meter-container {
+  display: flex;
+  margin-left: 3rem;
+}
+
+.full-circle {
+  margin: 0 .5rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  background: white;
+  border: .25rem solid white;
+  border-radius: 50%;
+}
+
+.empty-circle {
+  margin: 0 .5rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  border: .25rem solid white;
+  border-radius: 50%;
+}
+
+.exp-edu-int-container {
+  grid-area: eei;
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-container {  
+  display: flex;
+  flex-direction: column;  
+}
+
+.education-container {  
+  display: flex;
+  flex-direction: column;  
+  justify-self: flex-start;
+}
+
+.interests-container {  
+  display: flex;
+  flex-direction: column;  
+  justify-self: flex-start;
+}
+
+.job-title-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.job-title-container h4:nth-last-child(1) {
+  margin-top: 1rem;
+}
+
+td {
+  padding: 1rem;
+}
+
+tr td:first-child {
+  padding-left: 0;
+  text-align: center;
+}
+
+ul {
+  padding-left: 1rem;
+  margin-top: 3rem;
+}
+
+li {
+  padding: .25rem;
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+.icons-container {
+  display: flex;
+}
+
+.icons-container img {
+  margin: 0 1rem;
+}
+
+/*PROJECTS SECTION*/
+.projects {
+  grid-area: projects;
+  display: grid;
+  grid-template: 
+  "h2 h2 h2"
+  "pc pc pc"
+  /1fr 1fr 1fr;
+  background-color:black;
+ }
+
+.projects h2 {
+  grid-area: h2;
+  margin: 0 0 7rem;
+  text-transform: uppercase;
+  justify-self: center;
+  color: #5ab6e0;    
+}
+
+.projects-container {
+  grid-area: pc;
+}
+
+.project-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 6rem;
+}
+
+.project-description {
+  width: 100%;
+}
+
+.project-description h3 {
+  padding-bottom: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.8rem;
+  font-size: 2rem;
+  text-align: left;
+  color: #5ab6e0;
+  border-bottom: 1px solid #5ab6e0;
+}
+
+.project-description p {
+  color: #5ab6e0;
+  text-align: left;
+}
+
+.project-btns-container {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.project-btns-container .hover-btn {
+  font-size: 1.5rem;
+  padding: .6rem 1.2rem;
+}
+
+.source-code-btn {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #5ab6e0;
+  padding: 0.8rem 1.6rem;
+}
+
+.project-photo {    
+  align-self: flex-start;
+  margin-top: 3rem;    
+}
+
+.responsive {
+  height: auto;
+  max-width: 600px;
+  width: 100%;
+}
+
+/*CONTACT SECTION*/
+
+.contact {
+  grid-area: contact;
+  padding: 0;    
+  background: black;
+}
+
+.contact-background {
+  background-image: url("images/planet-earth.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+  -webkit-clip-path: polygon(0 20%,100% 0,100% 100%,0 100%);
+  clip-path: polygon(0 20%,100% 0,100% 100%,0 100%);
+  position: relative;
+  color: white;
+}
+
+.contact-background:after {
+  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  background: white;
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 79%;
+  right: 0;
+  height: 100%;
+  display: block;
+}
+
+.contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  background-image: linear-gradient(135deg,#5ab5e06e, #318ca88a, #add6e285);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 4rem;
+}
+
+.contact h2 {
+  margin: 5rem 0rem;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;    
+  height: 20rem;
+  width: 25rem;
+  margin: 0 0 3rem;
+  color: white;
+  overflow: hidden;
+  position: relative;
+  background: rgba(19, 132, 160, 0.603);
+  border: .2rem solid rgb(102, 199, 255);
+  box-shadow: 0 1rem 2rem rgba(59, 232, 255, 0.5);
+  transition: .3s;
+}
+
+.box p {
+  font-size: 1.4rem;
+}
+
+.box:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(90deg, rgba(102, 212, 255, 0.02), rgba(70, 212, 255, 0.404)); 
+  animation: animate 5s linear infinite;  
+}
+
+@keyframes animate {
+  0% {
+    transform:scaleX(0);
+    transform-origin: left;
+  }
+  15% {
+    transform:scaleX(1);
+    transform-origin: left;
+  }
+  15.1% {
+    transform:scaleX(1);
+    transform-origin: right;      
+  }    
+  30% {
+    transform:scaleX(0);
+    transform-origin: right;      
+  }  
+  100% {
+    transform:scaleX(0);
+    transform-origin: right;      
+  }    
+} 
+
+.typewriter {
+  z-index: -1;
+  
+  top: 30%;
+  left: 0;  
+  color: #fff;
+  display: flex;
+  font-size: 1.5rem;
+  position: absolute;  
+  white-space: nowrap;
+  overflow: hidden; 
+  border-right: .3rem solid grey; 
+  letter-spacing: .5rem; 
+  animation: typing 3s steps(16, end), blink-caret .5s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: grey }
+}
+
+/*FOOTER*/
+
+footer {
+  grid-area: footer;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  font-size: 1.5rem;
+  color: white;
+  padding: 5rem 0 5rem 0;
+  position: relative;
+}
+
+.back-to-top {
+  position: absolute;
+  bottom: 89%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4.5rem;
+  width: 4.5rem;
+  border: .2rem solid rgb(8, 127, 156);
+  border-radius: 50%;
+  background: black;
+  transition: .3s ease;
+}
+
+.back-to-top a img {
+  display: block;
+  height: 100%;
+  width: 100%
+}
+
+.social-links a img {
+  height: auto;
+  width: 100%;
+  max-width: 3.5rem;
+}
+
+.social-links a:last-child {
+  margin-left: 3rem;
+}
+
+footer hr {
+  margin: 2.5rem 0 1rem;
+  border: 0;
+  width: 50%;
+  border-top: 2px solid grey;
+}
+
+footer p span {
+  color: #5ab6e0;
+}
+
+
+/* RESPONSIVE DESIGN */
+  
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {   
+
+  section {
+    padding: 2rem;
+  }
+
+  .about-background {    
+    grid-template: 
+    ". h2 h2 h2 ."
+    ". img img img ."
+    "p p p p p"  
+    "sc sc . eei eei"
+    /2fr 2fr 1fr 2fr 2fr;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    padding: 4rem 2rem 20rem 2rem;
+  }
+
+  .about-background:after {
+    -webkit-clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+    top: 89.75%;
+  }
+
+  .experience-container {
+    justify-self: end;
+  }
+
+  .projects {
+    grid-template: 
+    ". h2 ."
+    ". pc ."
+    /1fr 8fr 1fr;
+  }
+}
+  
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+  /*TOP SECTION*/
+
+  .hover-btn:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: all .5s cubic-bezier(.19,1,.22,1);
+    background-image: linear-gradient(135deg,#0b517257 0%, #4db9eb77  100%);
+  }
+  
+  .hover-btn:hover {
+    -webkit-text-fill-color: rgb(68, 182, 235);
+  }
+
+  .hover-btn:hover:after {
+    width: 100%;
+  }
+
+  /*ABOUT SECTION*/
+
+  .about-background {
+    grid-template: 
+    ". h2 h2 h2 ."
+    ". img . p ."
+    ". s s s ."  
+    ". sc . eei ."   
+    /1fr 3fr 5rem 3fr 1fr;
+    padding: 4rem 2rem 15rem 2rem;
+  }
+
+  .about-text {
+    margin: 0;
+  }
+
+  .space {
+    grid-area: s;
+    height: 5rem;
+  }
+
+  .profile-img {
+    justify-self: center;
+  }
+
+  .hover-btn-contact {    
+    transition: .3s;
+    margin: 5rem 0 0;
+    align-self: start;
+  }
+
+  .hover-btn-contact:hover {
+    color: #2da6df;
+  }
+
+  .hover-btn-contact:before {
+    top: 0;
+    left: 0;
+    width: 0;
+    z-index: -1;
+    content: '';   
+    height: 100%;
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all .5s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  .hover-btn-contact:hover:before {
+    width: 100%;
+  }
+
+  .skills-container {    
+    justify-self: end;  
+  }
+
+  .experience-container {   
+    justify-self: start;
+    margin-top: 0;
+  }
+
+  .job-title-container h4:nth-last-child(1) {
+    margin-top: 0;
+  }
+
+  /*PROJECTS SECTION*/
+
+  .projects {
+    grid-template: 
+    ". h2 ."
+    ". pc ."
+    /1fr 8fr 1fr;
+  }
+
+  .project-container {
+    flex-direction: row;
+    justify-content: left;
+    align-items: flex-start;
+    margin-bottom: 8rem;
+  }
+
+  .project-description {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .source-code-btn {
+    transition: .3s ease;
+    padding: 0.8rem 1.6rem
+  }
+
+  .source-code-btn:hover {
+    margin-left: 2rem;
+  }
+
+  .project-photo {
+    margin: 0 0 0 5rem;
+  }    
+
+  /*FOOTER SECTION*/
+
+  .back-to-top:hover {
+    transform: scale(1.3);        
+  }
+
+  .back-to-top:hover img {
+    transform: scale(1.1);  
+  }
+}  
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+  .about-background {
+    grid-template: 
+    ". h2 h2 ."
+    ". img p ."
+    ". s s ."  
+    ". sc eei ."
+    /1fr 2fr 2fr 1fr;
+  }
+
+  .projects {
+    grid-template: 
+    ". h2 ."
+    ". pc ."
+    /1fr 4fr 1fr;
+  }
+}
+
+    © 2020 GitHub, Inc.
+    Terms
+    Privacy
+    Security
+    Status
+    Help
+
+    Contact GitHub
+    Pricing
+    API
+    Training
+    Blog
+    About
+
